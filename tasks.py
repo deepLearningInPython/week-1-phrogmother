@@ -13,7 +13,12 @@ import numpy
 # Your code here:
 # -----------------------------------------------
 
-def step
+def step(x):
+    if x > 0:
+        output = 1
+    else:
+        output = -1
+    return output
 
 
 # -----------------------------------------------
@@ -28,7 +33,13 @@ def step
 
 # Your code here:
 # -----------------------------------------------
-def ReLu
+
+
+def ReLu(x, cutoff = 0):
+    x = numpy.array(x)
+    x[x < cutoff] = cutoff
+    output = x
+    return output
 
 
 # -----------------------------------------------
@@ -44,7 +55,10 @@ def ReLu
 # Your code here:
 # -----------------------------------------------
 
-def neural_net_layer
+def neural_net_layer(X, w):
+    x = X @ w
+    output = ReLu(x)
+    return output
 
 
 # ------------------------------------------
